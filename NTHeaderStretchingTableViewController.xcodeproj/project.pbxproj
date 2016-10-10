@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A407CA51DAB6A3B0095985F /* NTHeaderStretchingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A407CA41DAB6A3B0095985F /* NTHeaderStretchingTableViewController.m */; };
 		6A8B70231DAB681700A9B95F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B70221DAB681700A9B95F /* main.m */; };
 		6A8B70261DAB681700A9B95F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B70251DAB681700A9B95F /* AppDelegate.m */; };
 		6A8B70291DAB681700A9B95F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B70281DAB681700A9B95F /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A407CA31DAB6A3B0095985F /* NTHeaderStretchingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTHeaderStretchingTableViewController.h; sourceTree = "<group>"; };
+		6A407CA41DAB6A3B0095985F /* NTHeaderStretchingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTHeaderStretchingTableViewController.m; sourceTree = "<group>"; };
 		6A8B701E1DAB681700A9B95F /* NTHeaderStretchingTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTHeaderStretchingTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A8B70221DAB681700A9B95F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6A8B70241DAB681700A9B95F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A407CA21DAB6A230095985F /* NTHeaderStretchingTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6A407CA31DAB6A3B0095985F /* NTHeaderStretchingTableViewController.h */,
+				6A407CA41DAB6A3B0095985F /* NTHeaderStretchingTableViewController.m */,
+			);
+			path = NTHeaderStretchingTableViewController;
+			sourceTree = "<group>";
+		};
 		6A8B70151DAB681700A9B95F = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +70,7 @@
 		6A8B70201DAB681700A9B95F /* NTHeaderStretchingTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6A407CA21DAB6A230095985F /* NTHeaderStretchingTableViewController */,
 				6A8B70241DAB681700A9B95F /* AppDelegate.h */,
 				6A8B70251DAB681700A9B95F /* AppDelegate.m */,
 				6A8B70271DAB681700A9B95F /* ViewController.h */,
@@ -153,6 +166,7 @@
 				6A8B70291DAB681700A9B95F /* ViewController.m in Sources */,
 				6A8B70261DAB681700A9B95F /* AppDelegate.m in Sources */,
 				6A8B70231DAB681700A9B95F /* main.m in Sources */,
+				6A407CA51DAB6A3B0095985F /* NTHeaderStretchingTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +321,7 @@
 				6A8B70371DAB681700A9B95F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,7 +8,12 @@
 
 #import "NTHeaderStretchingTableViewController.h"
 
+#define NTDeviceSize [UIScreen mainScreen].bounds.size
+
 @interface NTHeaderStretchingTableViewController ()
+
+@property (nonatomic, strong) UIImage *navigationBackgroundImage;
+@property (nonatomic, strong) UIImageView *headerImageView;
 
 @end
 
@@ -16,83 +21,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.contentInset = UIEdgeInsetsMake(self.headerImageHeight, 0, 0, 0);
+    [self.tableView addSubview:self.headerImageView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 懒加载
+- (UIImage *)navigationBackgroundImage {
+    if (_navigationBackgroundImage == nil) {
+        if (self.navigationBackgroundImageName != nil && self.navigationBackgroundImageName.length != 0) {
+            _navigationBackgroundImage = [UIImage imageNamed:self.navigationBackgroundImageName];
+        } else {
+           // do nothing , return nil
+        }
+    }
+    return _navigationBackgroundImage;
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (UIImageView *)headerImageView {
+    if (_headerImageView == nil) {
+        _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, - self.headerImageHeight, NTDeviceSize.width, self.headerImageHeight)];
+        if (self.headerImageName != nil && self.headerImageName.length != 0) {
+            _headerImageView.image = [UIImage imageNamed:self.headerImageName];
+        } else {
+            NSLog(@"您没有设置头部显示的图片，所以UI上没有显示");// 提示使用者
+        }
+    }
+    return _headerImageView;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

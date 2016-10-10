@@ -19,6 +19,8 @@
 
 @implementation NTHeaderStretchingTableViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -53,14 +55,16 @@
 }
 
 #pragma mark - methods
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y < self.headerImageHeight) {
+    if (scrollView.contentOffset.y < - self.headerImageHeight) {
         CGRect tempFrame = self.headerImageView.frame;
         tempFrame.size.height = - scrollView.contentOffset.y;
         tempFrame.origin.y = scrollView.contentOffset.y;
         self.headerImageView.frame = tempFrame;
     }
 }
+
 
 
 

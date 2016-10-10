@@ -23,6 +23,6 @@
 /*
  * 导航栏背景图片名称
  */
-@property (nonatomic, assign) NSInteger headerImageHeight;
+@property (nonatomic, assign) int headerImageHeight;
 
 @end

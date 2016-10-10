@@ -15,11 +15,12 @@
 @implementation MainTableViewController
 
 - (void)viewDidLoad {
+    // 将父控制器中的属性设置放在super的viewDidLoad之前
     self.headerImageHeight = 200;
     self.headerImageName = @"husky";
-    [super viewDidLoad];
     self.navigationBackgroundImageName = @"";
     
+    [super viewDidLoad];
 }
 
 #pragma mark - 数据源方法

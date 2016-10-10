@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.contentInset = UIEdgeInsetsMake(self.headerImageHeight, 0, 0, 0);
     [self.tableView addSubview:self.headerImageView];
 }
@@ -40,6 +41,8 @@
 - (UIImageView *)headerImageView {
     if (_headerImageView == nil) {
         _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, - self.headerImageHeight, NTDeviceSize.width, self.headerImageHeight)];
+        _headerImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _headerImageView.clipsToBounds = YES;
         if (self.headerImageName != nil && self.headerImageName.length != 0) {
             _headerImageView.image = [UIImage imageNamed:self.headerImageName];
         } else {
@@ -47,6 +50,16 @@
         }
     }
     return _headerImageView;
+}
+
+#pragma mark - methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y < self.headerImageHeight) {
+        CGRect tempFrame = self.headerImageView.frame;
+        tempFrame.size.height = - scrollView.contentOffset.y;
+        tempFrame.origin.y = scrollView.contentOffset.y;
+        self.headerImageView.frame = tempFrame;
+    }
 }
 
 

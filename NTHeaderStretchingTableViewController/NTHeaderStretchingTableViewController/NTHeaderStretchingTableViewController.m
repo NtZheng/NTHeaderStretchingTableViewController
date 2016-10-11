@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];// 消除导航栏下部的一条线
     self.tableView.contentInset = UIEdgeInsetsMake(self.headerImageHeight, 0, 0, 0);
     [self.tableView addSubview:self.headerImageView];
 }

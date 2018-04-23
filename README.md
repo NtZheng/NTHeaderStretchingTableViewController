@@ -1,9 +1,10 @@
 # NTHeaderStretchingTableViewController
-####这是一个封装好的具有主流头部拉伸效果的UITableViewController####
+#### 这是一个封装好的具有主流头部拉伸效果的UITableViewController####
 * 使用方法：
 
-#####1、导入"NTHeaderStretchingTableViewController.h"和"NTHeaderStretchingTableViewController.m"文件
-#####2、继承与NTHeaderStretchingTableViewController这个类，然后设置下列属性即可
+##### 1、导入"NTHeaderStretchingTableViewController.h"和"NTHeaderStretchingTableViewController.m"文件
+
+##### 2、继承与NTHeaderStretchingTableViewController这个类，然后设置下列属性即可
 	
 	```
 	// 将父控制器中的属性设置放在super的viewDidLoad之前

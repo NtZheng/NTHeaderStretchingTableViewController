@@ -1,5 +1,5 @@
 # NTHeaderStretchingTableViewController
-#### 这是一个封装好的具有主流头部拉伸效果的UITableViewController####
+#### 这是一个封装好的具有主流头部拉伸效果的UITableViewController
 * 使用方法：
 
 ##### 1、导入"NTHeaderStretchingTableViewController.h"和"NTHeaderStretchingTableViewController.m"文件
